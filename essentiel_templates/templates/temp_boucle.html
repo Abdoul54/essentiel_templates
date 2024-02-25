@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boucle</title>
+  <link rel="stylesheet" media="screen" type="text/css" title="Mon style" href="{% static 'css/tabstyle.css' %}">
+</head>
+
+<body>
+  <h1>Langage des templates</h1>
+  <hr>
+  <table border="1">
+    <caption>Liste des étudiants</caption>
+    <tr>
+      <th>Rang</th>
+      <th>Matricule</th>
+      <th>Nom & Prénom</th>
+      <th>Genre</th>
+      <th>Note</th>
+      <th>Mention</th>
+    </tr>
+    {% for etudiant in classe %}
+    <tr>
+      {% if forloop.first %}
+      <td>1er</td>
+      {% elif forloop.last %}
+      <td>Dernier</td>
+      {% else %}
+      <td>{{forloop.counter}}ème</td>
+      {% endif %}
+      <td>{{etudiant.matricule}}</td>
+      <td>{{etudiant.nom_complet}}</td>
+      <td>{{etudiant.genre_entier}}</td>
+      <td>{{etudiant.note}}</td>
+      <td>{{etudiant.mention}}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td colspan="3">La moyenne de la classe est</td>
+      <td>{{moyenne}}</td>
+    </tr>
+  </table>
+  <hr>
+  {% for v in classe_vide %}
+  <h2>La classe contient des étuiants</h2>
+  {% empty %}
+  <h2 style="color:red;">La classe est vide</h2>
+  {% endfor %}
+  <hr>
+</body>
+
+</html>

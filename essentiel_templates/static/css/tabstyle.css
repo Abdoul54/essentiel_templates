@@ -1,0 +1,27 @@
+table {
+  margin: 0 auto;
+  border: medium solid #6495ed;
+  border-collapse: collapse;
+  width: 60%;
+}
+th {
+  font-family: monospace;
+  font-size: 150%;
+  border: thin solid #6495ed;
+  width: 60%;
+  padding: 5px;
+  background-color: #d0e3fa;
+}
+td {
+  font-family: sans-serif;
+  border: thin solid #6495ed;
+  width: 60%;
+  padding: 5px;
+  text-align: center;
+  background-color: #ffffff;
+}
+caption {
+  font-family: sans-serif;
+  font-size: 200%;
+  color: blue;
+}

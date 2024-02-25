@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calcul d'épargne</title>
+  <link rel="stylesheet" href="{% static 'css/valeur_future.css' %}">
+  <link rel="stylesheet" type="text/css" title="Mon style" media="{% static 'css/valeur_future.css' %}">
+  <script src="{% static 'js/valeur_future.js' %}"></script>
+</head>
+
+<body>
+  <h1>Calcul d'epargne</h1>
+  <form>
+    <label for="investissement">Investissement initial:</label>
+    <input type="text" id="investissement" value="10000">
+    <span id="investissement_erreur">&nbsp;</span><br>
+    <label for="taux_annuel">Taux d'interêt annuel:</label>
+    <input type="text" id="taux_annuel" value="5">
+    <span id="taux_erreur">&nbsp;</span><br>
+    <label for="duree">Durée en années:</label>
+    <input type="text" id="duree" value="10">
+    <span id="duree_erreur">&nbsp;</span><br>
+    <label for="valeur_future">Valeur Future:</label>
+    <input type="text" id="valeur_future" disabled><br>
+    <label>&nbsp;</label>
+    <input type="button" id="calculer" value="Calculer"><br>
+  </form>
+  <table id="tableau">
+  </table>
+</body>
+
+</html>

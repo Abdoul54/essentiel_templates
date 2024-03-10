@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Affichage des données saisies</title>
+</head>
+<body>
+  <table border="1">
+    <tr>
+      <td>pseudo : </td>
+      <td>{{cd.pseudo}}</td>
+    </tr>
+    <tr>
+      <td>Email : </td>
+      <td>{{cd.email}}</td>
+    </tr>
+    <tr>
+      <td>Password : </td>
+      <td>{{cd.password}}</td>
+    </tr>
+    <tr>
+      <td>Job</td>
+      <td>{{cd.job}}</td>
+    </tr>
+    <tr>
+      <td>Languages</td>
+      <td>{{cd.language}}</td>
+    </tr>
+  </table>
+  <hr>
+  <h2>Obtention automatique des clés et valeurs</h2>
+  <table>
+    {% for cle, valeur in cd.items %}
+    <tr>
+      <td>{{cle}} : </td>
+      <td>{{valeur}}</td>
+    </tr>
+  </table>
+</body>
+</html>

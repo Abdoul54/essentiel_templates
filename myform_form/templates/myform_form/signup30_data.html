@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Récuperer les données d'un formulaire</title>
+</head>
+
+<body>
+  <form method="post">
+    {% csrf_token %}
+    <table>{{form.as_table}}</table>
+    <input type="submit" value="s'inscrire">
+  </form>
+</body>
+
+</html>

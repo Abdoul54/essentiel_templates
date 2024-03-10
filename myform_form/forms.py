@@ -35,3 +35,11 @@ class SignupFormWidget(forms.Form):
   city = forms.ChoiceField(choices=CITIES, widget=forms.CheckboxSelectMultiple)
   language = forms.MultipleChoiceField(choices=LANGUAGES, widget=forms.SelectMultiple)
   cgu_accept = forms.BooleanField(initial=True)
+
+class SignupFormData(forms.Form):
+  pseudo = forms.CharField(max_length=8, required=False)
+  email = forms.EmailField()
+  password = forms.CharField(min_length=6, widget=forms.PasswordInput)
+  jobs = forms.ChoiceField(choices=JOBS, widget=forms.RadioSelect)
+  language = forms.MultipleChoiceField(choices=LANGUAGES, widget=forms.CheckboxSelectMultiple)
+  cgu_accept = forms.BooleanField(initial=True)
